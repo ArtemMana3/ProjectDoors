@@ -1,0 +1,6 @@
+framework module Pods_ProjectDoors {
+  umbrella header "Pods-ProjectDoors-umbrella.h"
+
+  export *
+  module * { export * }
+}
