@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2F68546129658C4100406CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F68546029658C4100406CC0 /* AppDelegate.swift */; };
-		2F68546329658C4100406CC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F68546229658C4100406CC0 /* SceneDelegate.swift */; };
-		2F68546529658C4100406CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F68546429658C4100406CC0 /* ViewController.swift */; };
+		2F68546529658C4100406CC0 /* DoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F68546429658C4100406CC0 /* DoorsViewController.swift */; };
 		2F68546829658C4100406CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F68546629658C4100406CC0 /* Main.storyboard */; };
 		2F68546A29658C4300406CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F68546929658C4300406CC0 /* Assets.xcassets */; };
 		2F68546D29658C4300406CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F68546B29658C4300406CC0 /* LaunchScreen.storyboard */; };
 		2F7D99832965CB0F003394E7 /* DoorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D99822965CB0E003394E7 /* DoorCell.swift */; };
 		2F7D99852966D763003394E7 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D99842966D763003394E7 /* Door.swift */; };
 		2F7D99872966D7F4003394E7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D99862966D7F4003394E7 /* API.swift */; };
-		2F7D99892966E925003394E7 /* DoorStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D99882966E925003394E7 /* DoorStatus.swift */; };
+		2F7D998C296712A6003394E7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D998B296712A6003394E7 /* Color.swift */; };
+		2F7D998E296712C3003394E7 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D998D296712C3003394E7 /* ReusableCell.swift */; };
 		5D7814FED99B60BE849CCE6B /* Pods_ProjectDoors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4BE56BE0C2C672922CA1AE /* Pods_ProjectDoors.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +24,7 @@
 		10D7696013671A412CBDD651 /* Pods-ProjectDoors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDoors.debug.xcconfig"; path = "Target Support Files/Pods-ProjectDoors/Pods-ProjectDoors.debug.xcconfig"; sourceTree = "<group>"; };
 		2F68545D29658C4100406CC0 /* ProjectDoors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDoors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F68546029658C4100406CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F68546229658C4100406CC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F68546429658C4100406CC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F68546429658C4100406CC0 /* DoorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsViewController.swift; sourceTree = "<group>"; };
 		2F68546729658C4100406CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F68546929658C4300406CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F68546C29658C4300406CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,7 +32,8 @@
 		2F7D99822965CB0E003394E7 /* DoorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorCell.swift; sourceTree = "<group>"; };
 		2F7D99842966D763003394E7 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		2F7D99862966D7F4003394E7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		2F7D99882966E925003394E7 /* DoorStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStatus.swift; sourceTree = "<group>"; };
+		2F7D998B296712A6003394E7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2F7D998D296712C3003394E7 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		338A0DE638616532F2A5329B /* Pods-ProjectDoors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDoors.release.xcconfig"; path = "Target Support Files/Pods-ProjectDoors/Pods-ProjectDoors.release.xcconfig"; sourceTree = "<group>"; };
 		3D4BE56BE0C2C672922CA1AE /* Pods_ProjectDoors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectDoors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,11 +80,10 @@
 		2F68545F29658C4100406CC0 /* ProjectDoors */ = {
 			isa = PBXGroup;
 			children = (
+				2F7D998A29671274003394E7 /* Extansion */,
 				2F7D997F29659960003394E7 /* Model */,
 				2F7D99802965996E003394E7 /* View */,
-				2F7D998129659977003394E7 /* ViewControler */,
 				2F68546029658C4100406CC0 /* AppDelegate.swift */,
-				2F68546229658C4100406CC0 /* SceneDelegate.swift */,
 				2F68546629658C4100406CC0 /* Main.storyboard */,
 				2F68546929658C4300406CC0 /* Assets.xcassets */,
 				2F68546B29658C4300406CC0 /* LaunchScreen.storyboard */,
@@ -98,7 +97,6 @@
 			children = (
 				2F7D99842966D763003394E7 /* Door.swift */,
 				2F7D99862966D7F4003394E7 /* API.swift */,
-				2F7D99882966E925003394E7 /* DoorStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,16 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				2F7D99822965CB0E003394E7 /* DoorCell.swift */,
+				2F68546429658C4100406CC0 /* DoorsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		2F7D998129659977003394E7 /* ViewControler */ = {
+		2F7D998A29671274003394E7 /* Extansion */ = {
 			isa = PBXGroup;
 			children = (
-				2F68546429658C4100406CC0 /* ViewController.swift */,
+				2F7D998B296712A6003394E7 /* Color.swift */,
+				2F7D998D296712C3003394E7 /* ReusableCell.swift */,
 			);
-			path = ViewControler;
+			path = Extansion;
 			sourceTree = "<group>";
 		};
 		4C787F78D6AC9986085BF472 /* Frameworks */ = {
@@ -242,13 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F68546529658C4100406CC0 /* ViewController.swift in Sources */,
+				2F68546529658C4100406CC0 /* DoorsViewController.swift in Sources */,
 				2F7D99832965CB0F003394E7 /* DoorCell.swift in Sources */,
 				2F68546129658C4100406CC0 /* AppDelegate.swift in Sources */,
 				2F7D99852966D763003394E7 /* Door.swift in Sources */,
 				2F7D99872966D7F4003394E7 /* API.swift in Sources */,
-				2F68546329658C4100406CC0 /* SceneDelegate.swift in Sources */,
-				2F7D99892966E925003394E7 /* DoorStatus.swift in Sources */,
+				2F7D998E296712C3003394E7 /* ReusableCell.swift in Sources */,
+				2F7D998C296712A6003394E7 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

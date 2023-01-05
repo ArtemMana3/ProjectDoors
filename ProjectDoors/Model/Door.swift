@@ -11,5 +11,22 @@ import UIKit
 struct Door {
     let name: String
     let type: String
-    var status: DoorStatus
+    var status: Status
+}
+
+enum Status: String {
+    case locked
+    case unlocking
+    case unlocked
+    
+    var oppositeStatus: Status {
+        switch self {
+        case .locked:
+            return .unlocked
+        case .unlocked:
+            return .locked
+        case .unlocking:
+            return .unlocking
+        }
+    }
 }
