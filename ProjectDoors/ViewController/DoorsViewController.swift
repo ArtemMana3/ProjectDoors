@@ -35,6 +35,7 @@ final class DoorsViewController: UIViewController {
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.customLightGray.cgColor
         btn.setImage(UIImage(named: "Setting"), for: .normal)
+        btn.addTarget(self, action: #selector(openSettings), for: .touchDown)
         return btn
     }()
     
@@ -144,6 +145,24 @@ final class DoorsViewController: UIViewController {
             }
 
         }
+    }
+    
+    @objc private func openSettings() {
+        let actionSheet = UIAlertController(title: "Settings", message: "Choose an option", preferredStyle: .actionSheet)
+        let colorAction = UIAlertAction(title: "Color", style: .default) { (action) in
+            // handle
+        }
+        actionSheet.addAction(colorAction)
+
+        let doorAction = UIAlertAction(title: "Door", style: .default) { (action) in
+            // handle
+        }
+        actionSheet.addAction(doorAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        actionSheet.addAction(cancelAction)
+
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 
