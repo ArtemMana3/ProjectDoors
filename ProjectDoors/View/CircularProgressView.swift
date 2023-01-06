@@ -112,12 +112,9 @@ class CircularProgressView: UIView {
         lineWidth = 15
         super.init(coder: coder)
         createProgressView()
-        
     }
     
     init(frame: CGRect, lineWidth: CGFloat?, rounded: Bool) {
-        
-        
         progress = 0
         
         if lineWidth == nil{

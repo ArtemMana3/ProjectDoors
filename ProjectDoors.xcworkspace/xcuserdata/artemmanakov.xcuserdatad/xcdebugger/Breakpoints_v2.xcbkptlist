@@ -62,8 +62,8 @@
             filePath = "ProjectDoors/View/DoorsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "ProjectDoors/View/DoorCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "configureCell(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -113,70 +113,6 @@
             startingLineNumber = "120"
             endingLineNumber = "120"
             landmarkName = "configureCell(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1DD72E78-10D2-43CD-9D57-6EF09175F98D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjectDoors/Model/API.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "changeDoorStatus(door:neededStatus:cell:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1DD72E78-10D2-43CD-9D57-6EF09175F98D - ac9fe4457c76002b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ProjectDoors.API.changeDoorStatus(door: ProjectDoors.Door, neededStatus: ProjectDoors.Status, cell: ProjectDoors.DoorCell, completion: (ProjectDoors.Door) -&gt; ()) -&gt; ()"
-                  moduleName = "ProjectDoors"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemmanakov/Desktop/MyDevelop/ProjectDoors/ProjectDoors/Model/API.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "400">
-               </Location>
-               <Location
-                  uuid = "1DD72E78-10D2-43CD-9D57-6EF09175F98D - 1b52c88b765c4c4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in ProjectDoors.API.changeDoorStatus(door: ProjectDoors.Door, neededStatus: ProjectDoors.Status, cell: ProjectDoors.DoorCell, completion: (ProjectDoors.Door) -&gt; ()) -&gt; ()"
-                  moduleName = "ProjectDoors"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/artemmanakov/Desktop/MyDevelop/ProjectDoors/ProjectDoors/Model/API.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "126">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "076AA09D-664A-4E9D-85BA-BAE607BD86C3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjectDoors/Model/API.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "changeDoorStatus(door:neededStatus:cell:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

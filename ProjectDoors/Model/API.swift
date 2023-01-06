@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class API {
     func getDoorsList(completion: @escaping ([Door]) -> ()) {
@@ -26,12 +27,11 @@ final class API {
             }
             prograss.completedUnitCount += 1
             let prograssFloat = Float((prograss.fractionCompleted))
-            DispatchQueue.main.async { // Change UI
+            DispatchQueue.main.async { 
                 cell.circularProgressView.setProgress(to: prograssFloat)
             }
         }
-        
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 2) {
             completion(Door(name: door.name, type: door.type, status: neededStatus))
             cell.circularProgressView.progress = 0.0
         }

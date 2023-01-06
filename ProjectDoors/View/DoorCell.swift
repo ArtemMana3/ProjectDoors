@@ -20,7 +20,7 @@ final class DoorCell: UITableViewCell, ReusableCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var view: UIView = {
+    private lazy var view: UIView = {
         let view = UIView(frame: CGRect(x: 15, y: 0, width: UIScreen.main.bounds.width - 30, height: 115))
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 13
@@ -120,7 +120,6 @@ final class DoorCell: UITableViewCell, ReusableCell {
         if door.status != .unlocking {
             circularProgressView.isHidden = true
             imageRight.isHidden = false
-
         } else {
             imageRight.isHidden = true
             circularProgressView.isHidden = false
@@ -130,16 +129,5 @@ final class DoorCell: UITableViewCell, ReusableCell {
         doorTypeLabel.text = door.type
         doorStatusLabel.text = door.status.rawValue.capitalized + (door.status == .unlocking ? "..." : "")
         doorStatusLabel.textColor = UIColor.getStatusLableColor(status: door.status)
-    }
-    
-    func getImage(status: Status, left: Bool) -> UIImage {
-        switch status {
-        case .locked:
-            return left ? UIImage(named: "LockedCellLeft")! : UIImage(named: "LockedCellRight")!
-        case .unlocking:
-            return left ? UIImage(named: "UnlockingCellLeft")! : UIImage(named: "UnlockingCellRight")!
-        case .unlocked:
-            return left ? UIImage(named: "UnlockedCellLeft")! : UIImage(named: "UnlockedCellRight")!
-        }
     }
 }

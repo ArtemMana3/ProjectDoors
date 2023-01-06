@@ -66,7 +66,6 @@ final class DoorsViewController: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.separatorStyle = .none
-//        table.sele
         return table
     }()
     
@@ -167,7 +166,6 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         return 130.0
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let door = doors[indexPath.row]
         if door.status == .unlocking { return }
@@ -180,8 +178,13 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         
         api.changeDoorStatus(door: door, neededStatus: oppositeStatus, cell: cell) { [weak self] door in
             self?.doors[indexPath.row] = door
-            DispatchQueue.main.async { // Change UI
+            DispatchQueue.main.async {
                 self?.tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+            if door.status == .unlocked {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.tableView(tableView, didSelectRowAt: indexPath)
+                }
             }
         }
     }
