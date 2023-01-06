@@ -12,6 +12,10 @@ struct Door {
     let name: String
     let type: String
     var status: Status
+    
+    static let doors = [Door(name: "Front door", type: "Office", status: .locked),
+                        Door(name: "Back door ", type: "Home", status: .locked),
+                        Door(name: "Main door", type: "Home", status: .locked)]
 }
 
 enum Status: String {

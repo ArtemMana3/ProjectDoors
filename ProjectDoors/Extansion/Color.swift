@@ -11,6 +11,7 @@ import UIKit
 extension UIColor {
     static let customLightGray = UIColor(red: 0.882, green: 0.91, blue: 0.91, alpha: 1)
     static let customDarkBlue =  UIColor(red: 0.196, green: 0.216, blue: 0.333, alpha: 1)
+    static let customGreen = UIColor(red: 0.169, green: 0.722, blue: 0.31, alpha: 1)
     
     static func getStatusLableColor(status: Status) -> UIColor {
         switch status {

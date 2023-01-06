@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F59968B2968361800B133DB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F59968A2968361800B133DB /* CircularProgressView.swift */; };
+		2F59968D2968697100B133DB /* GradientLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F59968C2968697100B133DB /* GradientLable.swift */; };
+		2F599690296877B000B133DB /* Sk-Modernist.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F59968F296877B000B133DB /* Sk-Modernist.otf */; };
+		2F599692296877BC00B133DB /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F599691296877BC00B133DB /* Sk-Modernist-Bold.otf */; };
+		2F5996962968993000B133DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5996952968993000B133DB /* UIImage.swift */; };
 		2F68546129658C4100406CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F68546029658C4100406CC0 /* AppDelegate.swift */; };
 		2F68546529658C4100406CC0 /* DoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F68546429658C4100406CC0 /* DoorsViewController.swift */; };
 		2F68546829658C4100406CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F68546629658C4100406CC0 /* Main.storyboard */; };
@@ -22,6 +27,11 @@
 
 /* Begin PBXFileReference section */
 		10D7696013671A412CBDD651 /* Pods-ProjectDoors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDoors.debug.xcconfig"; path = "Target Support Files/Pods-ProjectDoors/Pods-ProjectDoors.debug.xcconfig"; sourceTree = "<group>"; };
+		2F59968A2968361800B133DB /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		2F59968C2968697100B133DB /* GradientLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLable.swift; sourceTree = "<group>"; };
+		2F59968F296877B000B133DB /* Sk-Modernist.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sk-Modernist.otf"; sourceTree = "<group>"; };
+		2F599691296877BC00B133DB /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sk-Modernist-Bold.otf"; sourceTree = "<group>"; };
+		2F5996952968993000B133DB /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		2F68545D29658C4100406CC0 /* ProjectDoors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDoors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F68546029658C4100406CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F68546429658C4100406CC0 /* DoorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +69,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2F59968E2968777600B133DB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2F59968F296877B000B133DB /* Sk-Modernist.otf */,
+				2F599691296877BC00B133DB /* Sk-Modernist-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2F68545429658C4100406CC0 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 		2F68545F29658C4100406CC0 /* ProjectDoors */ = {
 			isa = PBXGroup;
 			children = (
+				2F59968E2968777600B133DB /* Fonts */,
 				2F7D998A29671274003394E7 /* Extansion */,
 				2F7D997F29659960003394E7 /* Model */,
 				2F7D99802965996E003394E7 /* View */,
@@ -104,6 +124,8 @@
 		2F7D99802965996E003394E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F59968C2968697100B133DB /* GradientLable.swift */,
+				2F59968A2968361800B133DB /* CircularProgressView.swift */,
 				2F7D99822965CB0E003394E7 /* DoorCell.swift */,
 				2F68546429658C4100406CC0 /* DoorsViewController.swift */,
 			);
@@ -115,6 +137,7 @@
 			children = (
 				2F7D998B296712A6003394E7 /* Color.swift */,
 				2F7D998D296712C3003394E7 /* ReusableCell.swift */,
+				2F5996952968993000B133DB /* UIImage.swift */,
 			);
 			path = Extansion;
 			sourceTree = "<group>";
@@ -189,6 +212,8 @@
 			files = (
 				2F68546D29658C4300406CC0 /* LaunchScreen.storyboard in Resources */,
 				2F68546A29658C4300406CC0 /* Assets.xcassets in Resources */,
+				2F599690296877B000B133DB /* Sk-Modernist.otf in Resources */,
+				2F599692296877BC00B133DB /* Sk-Modernist-Bold.otf in Resources */,
 				2F68546829658C4100406CC0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,11 +269,14 @@
 			files = (
 				2F68546529658C4100406CC0 /* DoorsViewController.swift in Sources */,
 				2F7D99832965CB0F003394E7 /* DoorCell.swift in Sources */,
+				2F59968B2968361800B133DB /* CircularProgressView.swift in Sources */,
 				2F68546129658C4100406CC0 /* AppDelegate.swift in Sources */,
 				2F7D99852966D763003394E7 /* Door.swift in Sources */,
 				2F7D99872966D7F4003394E7 /* API.swift in Sources */,
 				2F7D998E296712C3003394E7 /* ReusableCell.swift in Sources */,
+				2F59968D2968697100B133DB /* GradientLable.swift in Sources */,
 				2F7D998C296712A6003394E7 /* Color.swift in Sources */,
+				2F5996962968993000B133DB /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

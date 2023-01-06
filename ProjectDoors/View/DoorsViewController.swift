@@ -12,14 +12,20 @@ final class DoorsViewController: UIViewController {
     private var doors = [Door]()
     private let api = API()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var titleLabel1: UILabel = {
         let lbl = UILabel()
-        let string = "Inter QR"
-        let attributedString = NSMutableAttributedString(string: string)
-        attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 27), range: NSRange(location: 0, length: 8))
-        attributedString.addAttribute(.foregroundColor, value: UIColor(red: 0.655, green: 0.659, blue: 0.667, alpha: 1), range: NSRange(location: 0, length: 5))
-        attributedString.addAttribute(.foregroundColor, value: UIColor.blue, range: NSRange(location: 6, length: 2))
-        lbl.attributedText = attributedString
+        lbl.text = "Inter"
+        lbl.font = UIFont(name: "Sk-Modernist-Bold", size: 26.0)
+        lbl.textColor = UIColor(red: 0.655, green: 0.659, blue: 0.667, alpha: 1)
+        return lbl
+    }()
+    
+    private lazy var titleLabel2: UILabel = {
+        let lbl = GradientLabel()
+        lbl.text = "QR"
+        lbl.font = UIFont(name: "Sk-Modernist-Bold", size: 26.0)
+        lbl.gradientColors = [UIColor(red: 0, green: 0.267, blue: 0.545, alpha: 1).cgColor,
+                              UIColor(red: 0, green: 0.561, blue: 0.827, alpha: 1).cgColor]
         return lbl
     }()
     
@@ -43,7 +49,6 @@ final class DoorsViewController: UIViewController {
         let lbl = UILabel()
         lbl.text = "Welcome"
         lbl.font = UIFont(name: "Sk-Modernist-Bold", size: 35.0)
-        lbl.font = UIFont.boldSystemFont(ofSize: 35)
         return lbl
     }()
     
@@ -52,7 +57,6 @@ final class DoorsViewController: UIViewController {
         lbl.text = "My doors"
         lbl.textColor = UIColor.customDarkBlue
         lbl.font = UIFont(name: "Sk-Modernist-Bold", size: 20.0)
-        lbl.font = UIFont.boldSystemFont(ofSize: 20) // ?????
         return lbl
     }()
     
@@ -62,6 +66,7 @@ final class DoorsViewController: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.separatorStyle = .none
+//        table.sele
         return table
     }()
     
@@ -71,14 +76,19 @@ final class DoorsViewController: UIViewController {
     }()
     
     func setupConstraints() {
-        titleLabel.snp.makeConstraints { make in
+        titleLabel1.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(16)
             make.leading.equalToSuperview().inset(24)
-            make.top.equalToSuperview().inset(77)
+        }
+        
+        titleLabel2.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel1)
+            make.leading.equalTo(titleLabel1.snp.trailing).inset(-4)
         }
         
         settingsButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(27)
-            make.top.equalToSuperview().inset(63)
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(6)
             make.width.equalTo(45)
             make.height.equalTo(45)
         }
@@ -91,13 +101,13 @@ final class DoorsViewController: UIViewController {
         }
 
         greetingLabel.snp.makeConstraints { make in
-            make.leading.equalTo(24)
-            make.top.equalToSuperview().inset(157)
+            make.top.equalTo(titleLabel1.snp.bottom).inset(-50)
+            make.leading.equalTo(titleLabel1)
         }
         
         doorsLabel.snp.makeConstraints { make in
-            make.leading.equalTo(24)
-            make.top.equalToSuperview().inset(307)
+            make.leading.equalTo(titleLabel1)
+            make.top.equalTo(greetingLabel.snp.bottom).inset(-120)
         }
         
         tableView.snp.makeConstraints { make in
@@ -119,7 +129,7 @@ final class DoorsViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        [titleLabel, settingsButton, homeImageView, greetingLabel, doorsLabel, tableView, activityIndicator].forEach {
+        [titleLabel1, titleLabel2, settingsButton, homeImageView, greetingLabel, doorsLabel, tableView, activityIndicator].forEach {
             view.addSubview($0)
         }
         setupConstraints()
@@ -149,6 +159,7 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.configureCell(with: doors[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -156,15 +167,18 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         return 130.0
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let door = doors[indexPath.row]
         if door.status == .unlocking { return }
-        var oppositeStatus = door.status.oppositeStatus
+        let oppositeStatus = door.status.oppositeStatus
         
         doors[indexPath.row].status = .unlocking
         self.tableView.reloadRows(at: [indexPath], with: .fade)
         
-        api.changeDoorStatus(door: door, neededStatus: oppositeStatus) { [weak self] door in
+        guard let cell = tableView.cellForRow(at: indexPath) as? DoorCell else { return }
+        
+        api.changeDoorStatus(door: door, neededStatus: oppositeStatus, cell: cell) { [weak self] door in
             self?.doors[indexPath.row] = door
             DispatchQueue.main.async { // Change UI
                 self?.tableView.reloadRows(at: [indexPath], with: .fade)

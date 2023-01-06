@@ -20,7 +20,7 @@ final class DoorCell: UITableViewCell, ReusableCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var view: UIView = {
+    lazy var view: UIView = {
         let view = UIView(frame: CGRect(x: 15, y: 0, width: UIScreen.main.bounds.width - 30, height: 115))
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 13
@@ -44,8 +44,7 @@ final class DoorCell: UITableViewCell, ReusableCell {
         let lbl = UILabel()
         lbl.text = door.name
         lbl.textColor = UIColor.customDarkBlue
-        lbl.font = UIFont(name: "Sk-Modernist", size: 16.0)
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.font = UIFont(name: "Sk-Modernist-Bold", size: 16.0)
         return lbl
     }()
 
@@ -53,17 +52,22 @@ final class DoorCell: UITableViewCell, ReusableCell {
         let lbl = UILabel()
         lbl.text = door.type
         lbl.textColor =  UIColor(red: 0.725, green: 0.725, blue: 0.725, alpha: 1)
-        lbl.font = UIFont(name: "Sk-Modernist", size: 14.0)
-        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.font = UIFont(name: "Sk-Modernist-Regular", size: 14.0)
         return lbl
     }()
 
-    private lazy var doorStatusLabel : UILabel = {
+    private lazy var doorStatusLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = door.status.rawValue
-        lbl.font = UIFont(name: "Sk-Modernist", size: 15.0)
-        lbl.font = UIFont.boldSystemFont(ofSize: 15)
+        lbl.font = UIFont(name: "Sk-Modernist-Bold", size: 15.0)
         return lbl
+    }()
+    
+    lazy var circularProgressView: CircularProgressView = {
+        let progressView = CircularProgressView(frame: CGRect(x: 0, y: 0, width: 22, height: 22), lineWidth: 2, rounded: false)
+        progressView.progressColor = .customGreen
+        progressView.progress = 0.0
+        return progressView
     }()
     
     func setupConstraints() {
@@ -87,31 +91,45 @@ final class DoorCell: UITableViewCell, ReusableCell {
 
         doorTypeLabel.snp.makeConstraints { make in
             make.top.equalTo(doorNameLabel.snp.bottom)
-            make.leading.equalTo(imageLeft.snp.trailing).inset(-14)
+            make.leading.equalTo(doorNameLabel)
         }
 
         doorStatusLabel.snp.makeConstraints { make in
             make.top.equalTo(doorTypeLabel.snp.bottom).inset(-27)
             make.centerX.equalTo(view.snp.centerX)
         }
+
+        circularProgressView.snp.makeConstraints { make in
+            make.top.equalTo(27)
+            make.trailing.equalTo(-60)
+        }
     }
     
     func setupCell() {
         addSubview(view)
-        [imageLeft, imageRight, doorNameLabel, doorTypeLabel, doorStatusLabel].forEach {
+        [imageLeft, imageRight, doorNameLabel, doorTypeLabel, doorStatusLabel, circularProgressView].forEach {
             view.addSubview($0)
         }
         setupConstraints()
     }
     
     func configureCell(with door: Door) {
-        imageLeft.image = getImage(status: door.status, left: true)
-        imageRight.image = getImage(status: door.status, left: false)
+        imageLeft.image = .getImageForCell(status: door.status, leftImage: true)
+        imageRight.image = .getImageForCell(status: door.status, leftImage: false)
+        
+        if door.status != .unlocking {
+            circularProgressView.isHidden = true
+            imageRight.isHidden = false
+
+        } else {
+            imageRight.isHidden = true
+            circularProgressView.isHidden = false
+        }
+        
         doorNameLabel.text = door.name
         doorTypeLabel.text = door.type
-        doorStatusLabel.text = door.status.rawValue.capitalized
+        doorStatusLabel.text = door.status.rawValue.capitalized + (door.status == .unlocking ? "..." : "")
         doorStatusLabel.textColor = UIColor.getStatusLableColor(status: door.status)
-
     }
     
     func getImage(status: Status, left: Bool) -> UIImage {
